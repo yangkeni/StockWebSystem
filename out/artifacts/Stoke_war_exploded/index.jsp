@@ -1,0 +1,370 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: ASUS
+  Date: 2020/11/9
+  Time: 15:18
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <base target="_self" />
+    <link href="img/favicon-ver1.1.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index-specific.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>财务通</title>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="nav_header"><!--导航栏-->
+            <nav class="menu-wrap">
+                <ul>
+                    <li class="current-menu-item">
+                        <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-home"></i>  首页</a>
+                    </li>
+                    <li><a href="${pageContext.request.contextPath}/html/news.html"><i class="fa fa-envelope"></i>  咨询速递</a></li>
+                    <li><a href="https://github.com/yangkeni/StockWebUI" target="_blank"><i class="fa fa-github"></i>  我的github</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="searchWrapper"><!--搜索框-->
+        <div class="searchForm">
+            <form action="${pageContext.request.contextPath}/request" method="get">
+                <input type="text" class="searchBox" placeholder="请输入沪深首字母加股票代码，如sh000001" title="搜索关键词" name="search">
+                <button type="submit" class="fa fa-search"></button>
+            </form>
+        </div>
+    </div>
+    <div class="Content">
+        <div class="topForm"><!--热门股票显示-->
+            <div class="topHead">
+                <i class="fa fa-line-chart"></i>
+                <span>热门股票</span>
+            </div>
+            <article class="top-Stock" >
+                <table class="topStock" id = "topNo1"><!--热门股票1-->
+                    <tr><!--股票名称-->
+                        <td colspan="4" class="StockName">
+                            <a href="html/specific.html">
+                                <h3></h3> (<span></span>)
+                            </a>
+                        </td>
+                    </tr>
+                    <tr><!--涨跌情况-->
+                        <td colspan="2" rowspan="2" class="bigTheme price">
+                            <span></span>
+                        </td>
+                        <td>涨跌额</td>
+                        <td>涨跌幅</td>
+                    </tr>
+                    <tr class="littleTheme">
+                        <td class="amount">
+                            <span></span>
+                        </td>
+                        <td class = "range">
+                                        <span>
+
+                                        </span>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <article class="top-Stock">
+                <table class="topStock" id = "topNo2"><!--热门股票2-->
+                    <tr>
+                        <td colspan="4" class="StockName">
+                            <a href="html/specific.html">
+                                <h3></h3> (<span></span>)
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" rowspan="2" class="bigTheme price">
+                            <span></span>
+                        </td>
+                        <td>涨跌额</td>
+                        <td>涨跌幅</td>
+                    </tr>
+                    <tr class="littleTheme color-green">
+                        <td class="amount">
+
+                            <span></span>
+                        </td>
+                        <td class = "range">
+
+                                        <span>
+
+                                        </span>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <article class="top-Stock">
+                <table class="topStock" id = "topNo3"><!--热门股票3-->
+                    <tr>
+                        <td colspan="4" class="StockName">
+                            <a href="html/specific.html">
+                                <h3></h3> (<span></span>)
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" rowspan="2" class="bigTheme price">
+                            <span></span>
+                        </td>
+                        <td>涨跌额</td>
+                        <td>涨跌幅</td>
+                    </tr>
+                    <tr class="littleTheme">
+                        <td  class="amount">
+
+                            <span></span>
+                        </td>
+                        <td class = "range">
+
+                                        <span>
+
+                                        </span>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <a href="#" class="more"><span>>>更多</span></a>
+        </div>
+        <div class="optionForm"><!--自选股票显示-->
+            <div class="optionHead">
+                <i class="fa fa-heart"></i>
+                <span>我的自选</span>
+            </div>
+            <article class="IndexDocker"><!--指数显示-->
+                <div class="singleIndex" id = "index1">
+                    <table>
+                        <tr>
+                            <td rowspan="2" class="IndexName">
+                                <a href="html/specific.html?search=sh000001">上证指数</a>
+                            </td>
+                            <td class="littleTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="littleTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="bigTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="singleIndex" id = "index2">
+                    <table>
+                        <tr>
+                            <td rowspan="2" class="IndexName">
+                                <a href="html/specific.html?search=sz399001">深证成指</a>
+                            </td>
+                            <td class="littleTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="littleTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="bigTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="singleIndex" id = "index3">
+                    <table>
+                        <tr>
+                            <td rowspan="2" class="IndexName">
+                                <a href="html/specific.html?search=sz399006">创业板指</a>
+                            </td>
+                            <td class="littleTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="littleTheme">
+                                <span></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="bigTheme">
+                                <p><span></span></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+            <article class="option-Stock" id="option1"><!--单个股票-->
+                <div class="title">
+                    <a href="html/specific.html">
+                        <h3>贵州茅台</h3> (<span>sh600519</span>)
+                    </a>
+                </div>
+                <div class="mainData">
+                    <div class="priceInfo">
+                                <span class="price bigTheme">
+                                    <span></span>
+                                </span>
+                        <span class="amount littleTheme">
+                                    <span></span>
+                                </span>
+                        <span class="range littleTheme">
+                                    <span></span>
+                                </span>
+                    </div>
+                    <div class="otherInfo">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>开盘价：</label>
+                                    <span></span>
+                                </td>
+                                <td>
+                                    <label>最高：</label>
+                                    <span></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>昨收价：</label>
+                                    <span></span>
+                                </td>
+                                <td>
+                                    <label>最低：</label>
+                                    <span></span>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </article>
+            <article class="option-Stock" id="option2"><!--单个股票-->
+                <div class="title">
+                    <a href="html/specific.html">
+                        <h3>五粮液</h3>
+                        (<span>sz000858</span>)
+                    </a>
+                </div>
+                <div class="mainData">
+                    <div class="priceInfo">
+                                <span class="price bigTheme">
+                                    <span></span>
+                                </span>
+                        <span class="amount littleTheme">
+                                    <span></span>
+                                </span>
+                        <span class="range littleTheme">
+                                    <span></span>
+                                </span>
+                    </div>
+                    <div class="otherInfo">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>开盘价：</label>
+                                    <span></span>
+                                </td>
+                                <td>
+                                    <label>最高：</label>
+                                    <span></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>昨收价：</label>
+                                    <span></span>
+                                </td>
+                                <td>
+                                    <label>最低：</label>
+                                    <span></span>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </article>
+            <a href="#" class="more"><span>>>更多</span></a>
+        </div>
+        <div class="recommendForm"><!--热门板块显示-->
+            <div class="recommendHead">
+                <i class="fa fa-star"></i>
+                <span>关于推荐</span>
+            </div>
+            <div class="recommendContent">
+                <div class="recommendTheme">
+                    <i class="fa fa-tags"></i>
+                    <span></span>类
+                </div>
+                <div class="recommend-Stock" id="industryNo1">
+                    <div class="title">
+                        <a href="html/specific.html">
+                            <h3></h3> (<span></span>)
+                        </a>
+                    </div>
+                    <div class="mainData">
+                        <div class="priceInfo">
+                                    <span class="price bigTheme">
+                                        <span></span>
+                                    </span>
+                            <span class="amount littleTheme">
+                                        <span></span>
+                                    </span>
+                            <span class="range littleTheme">
+                                        <span></span>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recommendContent">
+                <div class="recommendTheme">
+                    <i class="fa fa-tags"></i>
+                    <span></span>类
+                </div>
+                <div class="recommend-Stock" id="industryNo2">
+                    <div class="title">
+                        <a href="html/specific.html">
+                            <h3></h3> (<span></span>)
+                        </a>
+                    </div>
+                    <div class="mainData">
+                        <div class="priceInfo">
+                                    <span class="price bigTheme">
+                                        <span></span>
+                                    </span>
+                            <span class="amount littleTheme">
+                                        <span></span>
+                                    </span>
+                            <span class="range littleTheme">
+                                        <span></span>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="more"><span>>>更多</span></a>
+        </div>
+    </div>
+</div>
+<script src="${pageContext.request.contextPath}/js/index_init.js"></script>
+</body>
+</html>

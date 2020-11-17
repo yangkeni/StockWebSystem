@@ -1,0 +1,179 @@
+
+/*TODO: css
+固定导航栏：缺少滑下时的导航栏整体变色
+搜索框：正则表达式
+
+*/
+/*TODO: js
+引用js文件，设置新闻界面
+完善>>更多
+完善搜索框
+*/
+
+
+/*搜索框*/
+.searchWrapper{
+    width: 900px;
+    height: 60px;
+    margin: 0px auto 55px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    box-shadow:  0 0 3px 3px rgba(0, 0, 0, 0.4);
+    padding: 10px 100px;
+    box-sizing: border-box;
+}
+.searchBox{
+    width: 640px;
+    height: 40px;
+    border-radius: 30px;
+    padding: 5px 30px;
+    box-sizing: border-box;
+    outline: none;
+    float: left;
+    transition: all .78s ease;
+    -moz-transition: all .78s ease;	
+    -webkit-transition: all .78s ease;
+    -o-transition:  all .78s ease;
+}
+.searchBox:hover,.searchBox:focus{
+    box-shadow:  0 0 3px 3px rgba(0, 0, 0, 0.4);
+    transform: scale(1.06);
+    
+}
+.searchForm{
+    padding: 0px !important;
+}
+.searchForm button{
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    margin-left: 20px;
+    background: transparent;
+    border: none;
+    color: rgba(250, 250, 250, 0.6);
+    outline: none;
+    cursor: pointer;
+    transition: all .78s ease;
+    -moz-transition: all .78s ease;	
+    -webkit-transition: all .78s ease;
+    -o-transition:  all .78s ease;
+}
+.searchForm button:hover{
+    transform: scale(1.16);
+}
+.Content{
+    width: 1220px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    min-height: 400px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.5);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topForm{
+    margin-left: 30px;
+}
+[class$=-Stock],.singleIndex{
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(250, 250, 250, 0.6);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    border-radius: 10px;
+    transition: all .5s ease;
+    -moz-transition: all .78s ease;	
+    -webkit-transition: all .5s ease;
+    -o-transition:  all .78s ease;
+}
+[class$=-Stock]:hover,.singleIndex:hover{
+    box-shadow: 0 2px 4px rgba(0,0,0,.8);
+    transform: scale(1.1);
+}
+[class$=Form]{
+    position: relative;
+    padding: 10px; 
+}
+.more{
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+}
+.top-Stock table{
+    margin-bottom: 15px;
+    border-spacing: 6px;
+    border-collapse: separate;
+}
+.StockName{
+    text-indent: 1em;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0, .4);
+    padding-bottom: 5px;
+}
+.StockName a h3{
+    float: left;
+    margin-right: 8px;
+}
+.IndexDocker{
+    height: 85px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.IndexName{
+    font-size: 14px;
+}
+.singleIndex{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px 15px;
+}
+.singleIndex table{
+    border-collapse: separate;
+}
+.singleIndex table td{
+    padding: 0 3px 2px 3px;
+}
+.option-Stock{
+    height: 75px;
+    margin-bottom: 20px;
+}
+.title{
+    padding: 5px 15px;
+    text-indent: 1em;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0, .4);
+}
+.recommendForm{
+    margin-right: 30px;
+}
+.recommendTheme{
+    text-indent: 1em;
+    font-size: 14px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.recommend-Stock{
+    height: 74px;
+    margin-bottom: 20px;
+}
+.title a h3{
+    float: left;
+    margin-right: 8px;
+}
+[class$=Head]{
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+.priceInfo .amount{
+    margin-left: 10px;
+}
+.option-Stock .otherInfo{
+    float: right;
+    margin-right: 55px;
+}
